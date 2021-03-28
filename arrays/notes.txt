@@ -1,0 +1,26 @@
+- An array is a compound type that defines a sequence of data items of the same
+  type
+- Arrays have three attributes: type, capacity, and size
+- The type of all data items in an array must be the same; the array type is the
+  type of the elements
+- We cannot change the capacity of the array after it has been declared
+- Array size defines the number of valid elements at each moment
+
+Examples:
+
+int scores[6];
+Circle crls[4]
+
+- If the array is declared in the global area of the program, each element is
+  given a default value according to the array type
+- If the array is declared inside a function (including main), the elements are
+  filled with garbage values (what is left from the previous use of the memory
+  location)
+- The more dangerous situation is when we try to store a value in an element
+  that is out of range. In this case, we may unintentionally destroy data or
+  program code. When the program runs, the result is unpredictable: The program
+  may fail or it may produce invalid results. C++ implementations do not give a
+  compile-time or run-time warning when these errors occur
+
+REFERENCE
+FOROUZAN, Behrouz A.; GILBERG, Richard F.. C++ Programming: An Object-Oriented Approach. New York: McGraw-Hill Education, 2020.
