@@ -163,6 +163,7 @@ public:
         cout << "# Fim da lista" << endl;
     };
 
+    // desconstrutor
     virtual ~ArrayList()
     {
         delete[] m_elements;
