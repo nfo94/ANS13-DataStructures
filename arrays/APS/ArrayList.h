@@ -1,6 +1,7 @@
 #include <iostream>
 #ifndef ARRAYLIST_H
 #define ARRAYLIST_H
+using namespace std;
 
 template <class T>
 class ArrayList
@@ -20,12 +21,12 @@ private:
         if (m_size == m_capacity)
         {
             // crie um novo tipo T com o dobro de capacidade
-            T *newElements = new T[m_capacity *= 2]
-                // enquanto i for menor que a capacidade anterior
-                for (int i = 0; i < m_size; i++)
+            T *newElements = new T[m_capacity *= 2];
+            // enquanto i for menor que a capacidade anterior
+            for (int i = 0; i < m_size; i++)
             {
                 // atualize a nova estrutura com cada elemento do índice anterior
-                newElements[i] = m_elements[i]
+                newElements[i] = m_elements[i];
             }
             // delete o m_elements
             delete[] m_elements;
@@ -74,11 +75,9 @@ public:
         {
             return false;
         }
-        else
-        {
-            // adicione o elemento no índice desejado
-            m_elements[index] = elem;
-        }
+        growSizeIfNecessary();
+        // adicione o elemento no índice desejado
+        m_elements[index] = elem;
         // aumente o tamanho para acompanhar a adição
         m_size++;
         return true;
@@ -106,13 +105,10 @@ public:
         // verificando se o índex existe
         if (index < 0 || index >= m_size)
         {
-            throw "Index out of range"
+            throw "Index out of range";
         }
-        else
-        {
-            // removendo o elemento pelo seu índex
-            remove(index);
-        }
+        // removendo o elemento pelo seu índex
+        remove(index);
         return true;
     };
 
@@ -128,10 +124,10 @@ public:
         // verificando se o índex existe
         if (index < 0 || index >= m_size)
         {
-            throw "Index out of range"
+            throw "Index out of range";
         }
         // retornando o elemento que está no índex
-        return m_elements[index]
+        return m_elements[index];
     };
 
     // método para retornar o índex a partir do elemento
@@ -141,7 +137,7 @@ public:
         for (int i = 0; i < m_size; i++)
         {
             // se o elemento do índex for o que a gente quer
-            if (m_elements[i] == element)
+            if (m_elements[i] == elem)
                 // retorne o índex
                 return i;
         }
@@ -154,13 +150,13 @@ public:
     {
         if (isEmpty())
         {
-            cout << "# Lista Vazia" << endl;
+            cout << "# Empty list" << endl;
             return;
         }
-        cout << "# Início da lista" << endl;
+        cout << "# Beginning of the list" << endl;
         for (int i = 0; i < m_size; i++)
             cout << m_elements[i] << endl;
-        cout << "# Fim da lista" << endl;
+        cout << "# End of list" << endl;
     };
 
     // desconstrutor
