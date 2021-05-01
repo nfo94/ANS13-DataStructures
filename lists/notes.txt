@@ -1,4 +1,0 @@
-Lists can be consecutive elements (sequential list) or can be non consecutive
-(linked list). Lists can use arrays (static) or pointers (dinamic).
-
-Obs: Stacks, queues and deques are also lists.
